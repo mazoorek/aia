@@ -1,0 +1,17 @@
+{
+  "name": "assignment1",
+  "version": "1.0.0",
+  "description": "Projekt na zajecia z advanced internet applications",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass styles.scss styles.css -w"
+  },
+  "author": "Piotr Mazurek",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

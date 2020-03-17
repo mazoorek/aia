@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  position: relative; }
+  body .content-container {
+    flex-grow: 9;
+    display: flex;
+    flex-flow: column;
+    margin: 3rem; }
+    body .content-container .hero {
+      display: flex;
+      width: 100%;
+      height: 6rem;
+      margin-bottom: 6rem; }
+      body .content-container .hero .hero-title-container {
+        display: flex;
+        flex-grow: 1;
+        align-content: center; }
+        body .content-container .hero .hero-title-container .hero-title-item {
+          align-self: center;
+          font-size: 3.2rem; }
+          body .content-container .hero .hero-title-container .hero-title-item.title-icon {
+            height: 6rem;
+            width: 6rem;
+            background: url("./rs-icon.png") no-repeat center;
+            background-size: contain;
+            margin-right: 3rem; }
+      body .content-container .hero .hamburger-icon {
+        align-self: center;
+        background-color: #dfe3cb;
+        padding: 1.5rem;
+        border: 1px solid black;
+        border-radius: 1.5rem; }
+        body .content-container .hero .hamburger-icon .hamburger-icon-single-rectngle {
+          width: 3rem;
+          height: 3px;
+          background-color: black; }
+          body .content-container .hero .hamburger-icon .hamburger-icon-single-rectngle:not(:last-child) {
+            margin-bottom: 8px; }
+      body .content-container .hero .hero-navbar {
+        display: none; }
+    body .content-container .sections-container {
+      display: flex; }
+      body .content-container .sections-container .section-item {
+        flex-grow: 1;
+        display: flex;
+        flex-flow: column;
+        background-color: #dfe3cb;
+        border: 1px solid black;
+        margin-bottom: 3rem; }
+        body .content-container .sections-container .section-item .section-item-title {
+          margin-left: auto;
+          font-size: 2.4rem;
+          width: 15rem;
+          height: 3rem;
+          text-align: center;
+          border-left: 1px solid black;
+          border-bottom: 1px solid black; }
+          body .content-container .sections-container .section-item .section-item-title.first-title {
+            background-color: #68D1E6; }
+          body .content-container .sections-container .section-item .section-item-title.second-title {
+            background-color: #f2852f; }
+          body .content-container .sections-container .section-item .section-item-title.third-title {
+            background-color: #e9aeaf; }
+      body .content-container .sections-container .section-item-content {
+        padding: 3rem; }
+  body .footer {
+    position: fixed;
+    bottom: 0;
+    flex-flow: column;
+    padding: 3rem 0;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column;
+    justify-content: center;
+    width: 100%;
+    background-color: #dfe3cb; }
+    body .footer .footer-item {
+      text-align: center; }
+      body .footer .footer-item.surname {
+        font-weight: bold; }
+  @media (max-width: 600px) {
+    body .content-container .hero .hero-title-container .hero-title-item.title {
+      display: none; }
+    body .content-container .sections-container {
+      flex-flow: column; }
+      body .content-container .sections-container .section-item {
+        margin-right: 0; }
+    body .footer {
+      position: static; } }
+  @media (min-width: 601px) and (max-width: 1024px) {
+    body .content-container .sections-container {
+      flex-flow: row wrap; }
+      body .content-container .sections-container > div {
+        flex: 1 0;
+        flex-basis: calc(50%-3rem); }
+        body .content-container .sections-container > div:first-child {
+          flex-basis: 100%; }
+      body .content-container .sections-container .section-item:nth-child(2n) {
+        margin-right: 3rem; } }
+  @media (min-width: 1025px) {
+    body .content-container .hero .hamburger-icon {
+      display: none; }
+    body .content-container .hero .hero-navbar {
+      display: block;
+      flex-grow: 1; }
+      body .content-container .hero .hero-navbar .hero-navbar-items-container {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-end;
+        list-style-type: none; }
+        body .content-container .hero .hero-navbar .hero-navbar-items-container .hero-navbar-item {
+          flex-grow: 1;
+          text-align: right;
+          position: relative;
+          top: 1rem;
+          padding-right: 1rem; }
+    body .content-container .sections-container {
+      flex-flow: row nowrap; }
+      body .content-container .sections-container .section-item:not(:last-child) {
+        margin-right: 3rem; } }

@@ -1,0 +1,243 @@
+*,
+*::before,
+*::after {
+    box-sizing: inherit; //good practice - now its easier to change box sizing in plugins or other components, and we change box sizing to border-box in body
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%; //used for rem calculation(with this 1rem 10px), with percentage instead of hardcoding 10px user can do 'ctrl +' key combination and enlarge everything on page
+}
+
+body {
+    $default-font: 1.6rem;
+    $default-background-color: #dfe3cb;
+    $default-margin: 3rem;
+    $default-border: 1px solid black;
+
+    box-sizing: border-box;
+    font-size: $default-font; //16px;
+    position: relative;
+
+    
+
+    .content-container {
+        flex-grow: 9;
+        display: flex;
+        flex-flow: column;
+        margin: $default-margin;
+
+
+        .hero {
+            display: flex;
+            width: 100%;
+            height: 6rem;
+            margin-bottom: 2*$default-margin;
+    
+            .hero-title-container {
+                display: flex;
+                flex-grow: 1;
+                align-content: center;
+    
+                .hero-title-item {
+                    $hero-title-icon-size: 6rem;
+                    align-self: center;
+                    font-size: 2*$default-font;
+    
+                    &.title-icon {
+                        height: $hero-title-icon-size;
+                        width: $hero-title-icon-size;
+                        background: url("./rs-icon.png") no-repeat center;
+                        background-size: contain;
+                        margin-right: $default-margin;
+                    }
+                }   
+            }
+
+            .hamburger-icon {
+                align-self: center;
+                background-color: $default-background-color;
+                padding: 1.5rem;
+                border: $default-border;
+                border-radius: 1.5rem;
+
+                .hamburger-icon-single-rectngle {
+                    width: 3rem;
+                    height: 3px;
+                    background-color: black;
+
+                    &:not(:last-child) {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+    
+            .hero-navbar {
+                display: none;
+            }
+        }
+
+        .sections-container {
+            display: flex;
+
+            .section-item {
+                flex-grow: 1;
+                display: flex;
+                flex-flow: column;
+                background-color: $default-background-color;
+                border: $default-border;
+                margin-bottom: $default-margin;        
+
+                .section-item-title {
+                    margin-left: auto;
+                    font-size: 1.5*$default-font;
+                    width: 15rem;
+                    height: 3rem;
+                    text-align: center;
+                    border-left: $default-border;
+                    border-bottom: $default-border;
+                    
+                    &.first-title {
+                        background-color: #68D1E6;
+                    }
+
+                    &.second-title {
+                        background-color: #f2852f;
+                    }
+
+                    &.third-title {
+                        background-color: #e9aeaf;
+                    }
+                }
+            }
+
+            .section-item-content {
+                padding: $default-margin;
+            }
+        }
+    }
+
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        flex-flow: column;
+        padding: 3rem 0;
+        display: flex;
+        flex-grow: 1;
+        flex-flow: column;
+        justify-content: center;
+        width: 100%;
+        background-color: $default-background-color;
+
+        .footer-item {
+            text-align: center;
+
+            &.surname {
+                font-weight: bold;
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+
+        .content-container {
+
+            .hero {
+                     
+                .hero-title-container {
+                    
+                    .hero-title-item {
+
+                        &.title {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .sections-container {
+                flex-flow: column;
+    
+                .section-item {            
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .footer {
+            position: static;
+        }
+    }
+   
+    @media (min-width: 601px) and (max-width: 1024px) {
+        .content-container {
+
+            .sections-container {
+                flex-flow: row wrap;
+    
+                & > div {
+                    flex: 1 0;
+                    flex-basis: calc(50%-#{$default-margin});
+                    &:first-child {
+                        flex-basis: 100%;
+                    }
+                }
+    
+                .section-item {            
+                    &:nth-child(2n) {
+                        margin-right: $default-margin;
+                    }
+                }
+            }
+        }
+        
+    }
+
+    @media (min-width: 1025px) {
+
+        .content-container {
+            
+            .hero {
+                          
+                .hamburger-icon {
+                    display: none;
+                }
+
+                .hero-navbar {
+                    display: block;
+                    flex-grow: 1;
+                    .hero-navbar-items-container {
+                        display: flex;
+                        flex-flow: row;
+                        justify-content: flex-end;
+                        list-style-type: none;
+        
+                        .hero-navbar-item {
+                            flex-grow: 1;
+                            text-align: right;
+                            position: relative;
+                            top: 1rem;
+                            padding-right: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-container {
+
+            .sections-container {
+                flex-flow: row nowrap;
+    
+                .section-item {            
+                    
+                    &:not(:last-child) {
+                        margin-right: $default-margin;
+                    }
+                }
+            }
+        }
+    }
+}
