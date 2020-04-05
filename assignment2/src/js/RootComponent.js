@@ -1,4 +1,4 @@
-//import styleText from './x-counter.style.css'
+//import styleText from './root-component.style.css'
 // const sheet = new CSSStyleSheet();
 // sheet.replaceSync(styleText);
 
@@ -10,20 +10,19 @@ export function defineComponent() {
             const shadow = this.attachShadow({mode: 'open'});
             // shadow.adoptedStyleSheets = [sheet];
             shadow.innerHTML = `
-            <div class="title">Welcome to my book collection</div>
             <list-component></list-component>
             <style>
-                .title {
-                font-weight: bold;
-                font-size: 3rem;
-                padding: 20px 10px;
-                }
-                
                 :host {
+                    box-sizing: border-box;
                     height: 100vh;
-                    width: 100%;
+                    max-width: 100vw;
                     display: flex;
                     flex-flow: column;
+                    align-items: center;
+                }
+                
+                list-component {
+                    margin-top: 10rem;
                 }
             </style>
             `;
