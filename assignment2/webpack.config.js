@@ -27,9 +27,9 @@ module.exports = {
             },
             // {
             //     // bierze tak samo cssy ale nie pakuje ich do headera tylko je importuje
-            //     test: [/\.style.css$|\.style.scss$/],
+            //     test: [/\.css$|\.scss$/],
             //     use: [       
-            //         // 'style-loader',
+            //        
             //         'css-loader',
             //         'sass-loader'
             //     ]

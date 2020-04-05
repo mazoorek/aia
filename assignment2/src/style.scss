@@ -1,14 +1,16 @@
- *,
+*,
 *::before,
 *::after {
   box-sizing: inherit;
   padding: 0;
-  margin: 0; }
+  margin: 0;
+}
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   box-sizing: border-box;
-  background-color: red;
-  font-size: 1.6rem; } 
+  font-size: 1.6rem;
+}
