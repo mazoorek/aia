@@ -108,7 +108,6 @@ const FilmsList = (props) => {
 
     const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
 
-
     return (
         <div className={`${styles['films-list-container']} ${props.className}`}>
             <div className={`${styles['films-list']} ${styles['flex-item']}`}>
