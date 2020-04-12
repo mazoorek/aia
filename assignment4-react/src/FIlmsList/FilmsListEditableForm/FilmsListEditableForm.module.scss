@@ -1,0 +1,41 @@
+.film-list-editable-form {
+  display: flex;
+  flex-flow: column;
+
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 5px;
+
+    &__label {
+      align-self: center;
+    }
+
+    &__input {
+      height: 3.5rem;
+    }
+  }
+
+  .buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    .action-button {
+      width: 11rem;
+
+      &--edit, &--add {
+        background-color: #28af33;
+      }
+
+      &--cancel {
+        background-color: #4040a1;
+      }
+
+      &--delete {
+        background-color: #f1341b;
+      }
+    }
+  }
+}

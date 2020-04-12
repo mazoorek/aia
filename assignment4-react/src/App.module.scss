@@ -1,0 +1,15 @@
+.app {
+  box-sizing: border-box;
+  height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+
+  &__films-list {
+    margin-top: 10rem;
+  }
+}
+
+

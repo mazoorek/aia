@@ -1,0 +1,16 @@
+.film-list-header-filter {
+  display: flex;
+
+  &__item {
+    flex: 1 1 0;
+
+    .reset-filter-button {
+      background-color: #f1341b;
+    }
+
+    .filter-input {
+      height: 100%;
+      text-align: center;
+    }
+  }
+}

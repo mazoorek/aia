@@ -1,0 +1,49 @@
+.films-list-container {
+  display: inline-flex;
+  justify-content: center;
+  max-height: 80rem;
+  padding: 2rem;
+  box-shadow: 0 0 2rem 0 #888888;
+
+  .flex-item {
+    flex-grow: 1;
+    opacity: 1;
+    transition: all 1s;
+
+    &--collapsed {
+      flex-grow: 0.00001;
+      opacity: 0;
+      display: none;
+    }
+  }
+
+  .film-form {
+    width: 40rem;
+    padding-left: 2rem;
+  }
+
+  .films-list {
+    width: 100rem;
+
+    .rows-container {
+      display: flex;
+      flex-flow: column;
+
+      .list-row {
+        cursor: pointer;
+        display: flex;
+        flex-flow: row;
+        border-top: 2px solid #f0f0f0;
+        padding: 5px;
+
+        &:hover {
+          background-color: antiquewhite;
+        }
+
+        &__item {
+          flex: 1 1 0;
+        }
+      }
+    }
+  }
+}

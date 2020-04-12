@@ -1,0 +1,17 @@
+[
+  {
+    "rating": 7,
+    "name": "pierwszy",
+    "description": "opis1"
+  },
+  {
+    "rating": 8,
+    "name": "drugi",
+    "description": "opis2"
+  },
+  {
+    "rating": 7.9,
+    "name": "trzeci",
+    "description": "opis3"
+  }
+]

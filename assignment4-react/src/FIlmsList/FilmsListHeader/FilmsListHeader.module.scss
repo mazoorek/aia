@@ -1,0 +1,39 @@
+.film-list-header {
+  display: flex;
+  flex-flow: column;
+
+  &__filter {
+    padding-bottom: 8px;
+  }
+
+  &__title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.header-items {
+  display: flex;
+
+  &__item {
+    flex: 1 1 0;
+    align-self: center;
+
+    &--column-name {
+      font-weight: bold;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    &--button {
+      .add-button {
+        margin: 5px 0;
+        background-color: #4040a1;
+      }
+    }
+  }
+}
