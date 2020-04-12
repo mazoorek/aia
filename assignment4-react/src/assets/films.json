@@ -2,16 +2,19 @@
   {
     "rating": 7,
     "name": "pierwszy",
-    "description": "opis1"
+    "description": "opis1",
+    "image":  "image1"
   },
   {
     "rating": 8,
     "name": "drugi",
-    "description": "opis2"
+    "description": "opis2",
+    "image":  "image2"
   },
   {
     "rating": 7.9,
     "name": "trzeci",
-    "description": "opis3"
+    "description": "opis3",
+    "image":  "image3"
   }
 ]

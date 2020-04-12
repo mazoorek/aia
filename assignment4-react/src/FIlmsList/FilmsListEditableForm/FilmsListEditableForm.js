@@ -88,13 +88,6 @@ const FilmsListEditableForm = (props) => {
                        onChange={event => updateForm({rating: event.target.value})}
                        className={styles['form-row__input']}/>
             </div>
-            <div className={styles['form-row']}>
-                <label htmlFor="image" className={styles['form-row__label']}>image</label>
-                <input type="text"
-                       id={'image'}
-                       onChange={event => updateForm({image: event.target.value})}
-                       className={styles['form-row__input']}/>
-            </div>
             <div className={styles['buttons-container']}>
                 {(() => {
                     switch (props.formMode) {

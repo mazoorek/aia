@@ -66,12 +66,15 @@ const FilmsList = (props) => {
         })
     };
 
+    const NUMBER_OF_IMAGES = 3;
+
     const addNewFilm = (newFilm) => {
         setFilmsListState(prevState => {
             const updatedList = [...prevState];
             updatedList.push({
                 ...newFilm,
-                id: Math.max(...prevState.map(film => film.id), 0) + 1
+                id: Math.max(...prevState.map(film => film.id), 0) + 1,
+                image: `image${Math.round((Math.random() * 10) % NUMBER_OF_IMAGES + 1)}`
             });
             return updatedList;
         });
@@ -79,7 +82,7 @@ const FilmsList = (props) => {
 
     const deleteSelectedFIlm = (filmId) => {
         setFilmsListState(prevState => {
-            return [...prevState].filter(film => film.id !==filmId);
+            return [...prevState].filter(film => film.id !== filmId);
         })
     };
 
@@ -92,9 +95,18 @@ const FilmsList = (props) => {
     }, [currentFilter]);
 
     useEffect(() => {
-        console.log(filmsListState);
         applyFilter();
     }, [filmsListState]);
+
+    function importAll(r) {
+        let images = {};
+        r.keys().map((item, index) => {
+            images[item.replace('./', '')] = r(item);
+        });
+        return images;
+    }
+
+    const images = importAll(require.context('../assets/images', false, /\.(png|jpe?g|svg)$/));
 
 
     return (
@@ -114,10 +126,26 @@ const FilmsList = (props) => {
                                  setFilmFormVisible(true);
                              }}
                              key={film.id}>
-                            <div className={styles['list-row__item']}>zdjecie</div>
-                            <div className={styles['list-row__item']}>{film.rating}</div>
-                            <div className={styles['list-row__item']}>{film.name}</div>
-                            <div className={styles['list-row__item']}>{film.description}</div>
+                            <div className={`${styles['list-row__item']}`}>
+                                <img src={images[`${film.image}.jpg`]} className={`${styles['list-row__item--image']}`}
+                                     alt={'image'}/>
+                            </div>
+
+                            <div className={styles['list-row__item']}>
+                                <div className={styles['list-row__item__content']}>
+                                    {film.rating}
+                                </div>
+                            </div>
+                            <div className={styles['list-row__item']}>
+                                <div className={styles['list-row__item__content']}>
+                                    {film.name}
+                                </div>
+                            </div>
+                            <div className={styles['list-row__item']}>
+                                <div className={styles['list-row__item__content']}>
+                                    {film.description}
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
