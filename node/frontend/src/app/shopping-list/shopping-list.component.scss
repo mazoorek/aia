@@ -1,0 +1,31 @@
+:host {
+
+  .shopping-list-container {
+    width: calc(50%);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+    transform: translateX(50%);
+    display: flex;
+    flex-flow: column;
+
+    .basket-attachment-container {
+      display: flex;
+      justify-content: flex-end;
+
+      .basket-attachment {
+        display: inline-flex;
+        padding: 1rem;
+        background-color: rgba(255, 69, 0, 0.91);
+        cursor: pointer;
+
+        &:hover {
+          background-color: orangered;
+        }
+
+        &__image {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+:host {
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+  border-bottom: 1px solid rgba(133, 133, 133, 0.4);
+
+  .shop-item-property {
+    flex: 1 1 0;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      width: 9rem;
+      height: 9rem;
+    }
+
+    .amount-container {
+      &__switch {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+      }
+
+      &__value {
+        height: 2rem;
+        text-align: center;
+        padding: 0 2rem;
+      }
+    }
+    .basket-button {
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
+      background-color: rgba(255, 127, 80, 0.75);
+      border: 1px solid #92500f;
+      border-radius: 1rem;
+      padding: 0;
+      height: 4rem;
+      width: 15rem;
+
+      &:hover {
+        background-color: rgb(255, 127, 80);
+      }
+
+      &__image {
+        width: 2rem;
+        height: 2rem;
+        position: relative;
+        bottom: 3px;
+        margin-left: 1rem;
+      }
+
+      &__label {
+        height: 2rem;
+      }
+    }
+  }
+}

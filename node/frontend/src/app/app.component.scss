@@ -1,0 +1,13 @@
+:host {
+
+  display: flex;
+  flex-flow: column;
+  .header {
+    padding: 5rem;
+    text-align: center;
+    color: black;
+    font-size: 4rem;
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+  }
+}

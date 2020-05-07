@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  height: 10rem;
+  border-bottom: 1px solid rgba(133, 133, 133, 0.4);
+
+  .basket-item-property {
+    flex: 1 1 0;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      width: 9rem;
+      height: 9rem;
+    }
+
+    &__delete-button {
+      color: red;
+      font-size: 3rem;
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+  }
+}

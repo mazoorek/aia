@@ -1,0 +1,46 @@
+:host {
+  .shopping-basket-container {
+    width: calc(50%);
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
+    transform: translateX(50%);
+    display: flex;
+    flex-flow: column;
+
+    .basket-attachment-container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 2rem;
+
+      .basket-attachment {
+        padding: 1rem;
+        width: 20rem;
+        cursor: pointer;
+        white-space: nowrap;
+        display: flex;
+        justify-content: center;
+
+        &--go-back {
+          background-color: rgba(255, 69, 0, 0.9);
+
+          &:hover {
+            background-color: orangered;
+          }
+        }
+
+        &--submit {
+          background-color: rgba(17, 255, 0, 0.9);
+
+          &:hover {
+            background-color: #11ff00;
+          }
+        }
+      }
+    }
+
+    .no-products-in-basket {
+      text-align: center;
+      font-size: 4rem;
+      padding: 4rem 0 6rem 0;
+    }
+  }
+}
