@@ -1,0 +1,36 @@
+@{ 
+    var rules = new List<string>();
+
+    if (IsPost){
+        rules = (List<string>)Session["rules"];
+        rules.Add(Request["myRule"]);
+        Session["rules"] = rules;
+        Response.Redirect("Rules.cshtml");
+
+    }
+    else{
+        if(Session["rules"] == null){
+            Session["rules"] = rules;
+        }
+        rules = (List<string>)Session["rules"];
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <form method="post" action="./Rules.cshtml">
+        <input type="text" name="myRule" />
+        <button type="submit" value="Add">Add new rule</button>
+    </form>
+
+    <ul>
+        @foreach (var rule in rules){
+            <li>@rule</li>
+        }
+    </ul>
+</body>
+</html>
