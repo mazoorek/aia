@@ -1,12 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\asp-dot-net",
-    "\\asp-dot-net\\asp-dot-net",
-    "\\asp-dot-net\\asp-dot-net\\RazorPages",
-    "\\asp-dot-net\\asp-dot-net\\RazorPages\\Suits",
+    "\\asp-net",
     "\\node"
   ],
-  "SelectedNode": "\\asp-dot-net\\asp-dot-net\\RazorPages\\Suits\\Mark3.cshtml",
+  "SelectedNode": "\\asp-net",
   "PreviewInSolutionExplorer": false
 }

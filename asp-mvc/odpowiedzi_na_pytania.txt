@@ -1,0 +1,64 @@
+Ad 1.
+Models - Classes that represent the data of the app. 
+Views - Views are the components that display the app's user interface (UI).
+Controllers - Classes that handle browser requests. They retrieve model data and call view templates that return a response.
+
+How they are connected:
+ In an MVC app, the view only displays information; the controller handles and responds to user input and interaction. For example, the controller handles route data and query-string values, and passes these values to the model. The model might use these values to query the database. 
+
+Ad 2.
+Naming conventions:
+- all file names beginning with uppercase
+- in views different endpoint - different folder (HelloWorld endpoint - HelloWorld folder)
+- controllers have "Controller" suffix in their file name
+- name of functon in controller is the name of file in views folder of the template we are returning for instance Welcome function in HelloWorldController is returning Welcome.cshtml template
+
+Ad 3.
+- by passing it as an argument for instance: return View(movieGenreVM);
+- by defining ViewData in Controller in function returning the view for instance:
+ViewData["Message"] = "Hello " + name;
+
+in function:
+
+public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
+
+            return View();
+        }
+
+in HelloWorldController
+
+Ad 4.
+Firstly by configuring middleware in Startup.cs then by declaring action results for instance:
+public IActionResult Index()
+        {
+            return View();
+        }
+
+Ad 5.
+
+By [HttpMethod] above function in controller for instance:
+
+[HttpPost]
+        public string Index(string searchString, bool notUsed)
+        {
+            return "From [HttpPost]Index: filter on " + searchString;
+        }
+
+Ad 6.
+By using  [ValidateAntiForgeryToken] above method in Controller
+
+Ad 7.
+In model classes for instance by adding  [Required] above
+public string Title { get; set; }
+in Movie class
+
+And then in controller we bind the data to our model for instance by writing:
+[Bind("Id,Title,ReleaseDate,Genre,Price")] Movie movie
+
+And then we check if model is valid by writing if(ModelState.IsValid)
+
+
+
